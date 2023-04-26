@@ -21,6 +21,7 @@
                         <th>DESCRIZIONE</th>
                         <th>DATE</th>
                         <th>URL</th>
+                        <th>TYPE</th>
                         <th>DATA ELIMINAZIONE</th>
                     </tr>
                 </thead>
@@ -36,6 +37,7 @@
                         <td>
                             {{ $project->trashed() ? $project->deleted_at : '' }}
                         </td>
+                        <td> {{ $project->type ? $project->type->name : '-' }} </td>
                         <td>
                             <a class="btn " href="{{route('projects.edit',$project)}}">MODIFICA</a>
                             
@@ -48,6 +50,9 @@
                             </form>
                             
                         </td>
+                        
+                            
+                        
                         <td>
                             @if($project->trashed())
                                 <form action="{{ route('projects.restore',$project) }}" method="POST">
