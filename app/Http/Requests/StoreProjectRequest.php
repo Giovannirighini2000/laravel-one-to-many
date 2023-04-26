@@ -29,6 +29,7 @@ class StoreProjectRequest extends FormRequest
             'date' => 'nullable|string',
             'url' => 'nullable|string',
             'slug' => 'nullable|string',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }
