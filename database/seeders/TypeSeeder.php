@@ -1,11 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Types;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-class TypesSeeder extends Seeder
+class TypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class TypesSeeder extends Seeder
         $types = ['Programming', 'Backend', 'FrontEnd', 'Full stack', 'Design','Ai'];
 
         foreach ($types as $type) {
-            $new_typ = new Types();
+            $new_typ = new Type();
             $new_typ->name = $type;
             $new_typ->slug = Str::slug($type);
 
